@@ -26,6 +26,7 @@ export default function Projects() {
                   src={p.cover}
                   alt={p.name + ' 截图'}
                   loading="lazy"
+                  decoding="async"
                 />
                 <span className="placeholder-note">{p.coverOrigin}</span>
               </div>

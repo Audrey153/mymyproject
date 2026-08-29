@@ -1146,20 +1146,30 @@ button {
   transform: translateY(0);
 }
 
-/* 手机端：更短的时长、更小的位移、取消卡片错开（减少不必要的动画） */
+/* 手机端：更短的时长、更小的位移、取消卡片错开，并降低背景光斑性能开销 */
 @media (max-width: 720px) {
   [data-reveal] {
     --reveal-stagger: 0ms;
     transform: translateY(14px);
     transition-duration: 0.5s, 0.5s;
   }
+  .hero-bg::after {
+    width: 320px;
+    height: 320px;
+    filter: blur(24px);
+    animation: none;
+  }
 }
 
-/* 无障碍：系统开启"减少动态"时直接显示，禁用过渡与延迟 */
+/* 无障碍：系统开启"减少动态"时直接显示，禁用过渡与无限循环动画 */
 @media (prefers-reduced-motion: reduce) {
   [data-reveal] {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+  .hero-bg::after,
+  .hero-eyebrow .pulse {
+    animation: none;
   }
 }
