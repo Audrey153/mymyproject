@@ -40,7 +40,7 @@ export default function About() {
               <li><span className="k">即将入学</span><span className="v">{profile.school}</span></li>
               <li>
                 <span className="k">专业</span>
-                <span className="v">待补充（高考志愿以录取通知为准）</span>
+                <span className="v">{profile.major}</span>
               </li>
               <li><span className="k">高中母校</span><span className="v">江西省高安市第二中学</span></li>
               <li><span className="k">曾任</span><span className="v">高中三年班长</span></li>
