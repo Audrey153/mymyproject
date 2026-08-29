@@ -4,7 +4,7 @@ export default function Projects() {
   return (
     <section id="projects" className="section">
       <div className="container">
-        <div className="section-head">
+        <div className="section-head" data-reveal>
           <span className="section-eyebrow">03 · Projects</span>
           <h2 className="section-title">
             精选 <em>Projects</em>
@@ -15,8 +15,8 @@ export default function Projects() {
         </div>
 
         <div className="projects">
-          {projects.map((p) => (
-            <article className="project" key={p.id}>
+          {projects.map((p, i) => (
+            <article className="project" key={p.id} data-reveal style={{ '--rd': String(i) }}>
               <div
                 className="cover"
                 style={{ aspectRatio: p.coverRatio || '16 / 9' }}

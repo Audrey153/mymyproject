@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section id="hero" className="hero">
       <div className="hero-bg" aria-hidden="true" />
-      <div className="container hero-inner">
+      <div className="container hero-inner" data-reveal>
         <div className="hero-eyebrow">
           <span className="pulse" aria-hidden="true" />
           <span>Personal Portfolio · 2026</span>

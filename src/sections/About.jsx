@@ -9,7 +9,7 @@ export default function About() {
   return (
     <section id="about" className="section">
       <div className="container">
-        <div className="section-head">
+        <div className="section-head" data-reveal>
           <span className="section-eyebrow">01 · About Me</span>
           <h2 className="section-title">
             关于 <em>廖奥迎</em>
@@ -19,7 +19,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="about-grid">
+        <div className="about-grid" data-reveal>
           <div>
             <div className="avatar" aria-label="个人头像占位（待补充）">
               <span className="placeholder" aria-hidden="true">LY</span>
@@ -50,7 +50,7 @@ export default function About() {
 
         <div className="stats" role="list">
           {profile.stats.map((s, i) => (
-            <div className="stat" role="listitem" key={s.label}>
+            <div className="stat" role="listitem" key={s.label} data-reveal style={{ '--rd': String(i) }}>
               <div className="k">{s.label}</div>
               <div className={`v ${i % 2 === 0 ? 'neon' : 'pink'}`}>{s.value}</div>
             </div>

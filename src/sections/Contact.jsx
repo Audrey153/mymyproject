@@ -11,7 +11,7 @@ export default function Contact() {
   return (
     <section id="contact" className="section contact">
       <div className="container contact-inner">
-        <div>
+        <div data-reveal>
           <span className="section-eyebrow">05 · Contact</span>
           <h2>
             想认识 <em>{name}</em> 吗？
@@ -35,11 +35,13 @@ export default function Contact() {
         </div>
 
         <div className="contact-cards">
-          {items.map((it) => (
+          {items.map((it, i) => (
             <a
               className="contact-card"
               key={it.label}
               href={it.href || '#'}
+              data-reveal
+              style={{ '--rd': String(i) }}
               onClick={(e) => { if (!it.href) e.preventDefault(); }}
             >
               <div>

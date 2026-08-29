@@ -4,7 +4,7 @@ export default function Advantages() {
   return (
     <section id="advantages" className="section section--tight">
       <div className="container">
-        <div className="section-head">
+        <div className="section-head" data-reveal>
           <span className="section-eyebrow">04 · Strengths</span>
           <h2 className="section-title">
             个人 <em>优势</em> & <em>常用工具</em>
@@ -15,8 +15,8 @@ export default function Advantages() {
         </div>
 
         <div className="adv-grid">
-          {advantages.map((a) => (
-            <div className="adv" key={a.title}>
+          {advantages.map((a, i) => (
+            <div className="adv" key={a.title} data-reveal style={{ '--rd': String(i) }}>
               <span className="icon" aria-hidden="true">{a.icon}</span>
               <h4>{a.title}</h4>
               <p>{a.desc}</p>
@@ -24,7 +24,7 @@ export default function Advantages() {
           ))}
         </div>
 
-        <div className="tools-section">
+        <div className="tools-section" data-reveal>
           <h3>常用工具</h3>
           <div className="tools">
             {tools.map((t) => (
